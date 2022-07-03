@@ -5,7 +5,7 @@
     background-image: url("/css/front-view-pile-books-with-copy-space_23-2148255858\ \(1\).webp");
     background-position: center;
     height: auto;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-size:cover;
 
 }
@@ -26,10 +26,10 @@ input{
 }
 .container{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(600px, 220px));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
     justify-items: center;
+    justify-content: space-around;
     padding: 50px;
-    justify-content: center;
     min-height: 800px;
     
 }

@@ -4,7 +4,7 @@ let getbook = () => {
     let searchText = search.value;
 
     search.value="";
-
+    
     if (searchText==''){
         let error = document.getElementById('error');
         error.innerHTML="Please Type Book Name";
@@ -16,9 +16,12 @@ let getbook = () => {
 }
 
 let bookData =(items) =>{
+    let container = document.querySelector('.container');
+    container.innerHTML="";
   items.forEach (item => {
-   let container = document.querySelector('.container');
-   container.innerHTML=`
+  
+    let div = document.createElement('div');
+    div.innerHTML=`
   <div id="book-loding">
     <img src="${item.volumeInfo.imageLinks.smallThumbnail}" alt="Book Image"/>
     <a href="${item.volumeInfo.infoLink}" target="_blank"   class="booklink">
@@ -33,11 +36,12 @@ let bookData =(items) =>{
          Publisher: ${item.volumeInfo.publisher}
      </h5>
     <p class="mt-5">
-         ${item.volumeInfo.description}
+         ${item.volumeInfo.description.slice(0,200)}
     </p>
     <p>Page: ${item.volumeInfo.pageCount}</p>
   </div>`;
 
+  container.appendChild(div)
 
   })
 
